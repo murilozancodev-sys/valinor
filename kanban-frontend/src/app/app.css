@@ -1,0 +1,86 @@
+:root {
+  --bg-light: #f4f6f8;
+  --bg-dark: #1f1f23;
+
+  --column-light: #ebecf0;
+  --column-dark: #2b2b31;
+
+  --card-light: #ffffff;
+  --card-dark: #3a3a42;
+
+  --text-light: #1f1f23;
+  --text-dark: #f1f1f1;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: 0.3s ease;
+}
+
+/* 🌙 Dark Mode automático */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+}
+
+/* 🔥 Header moderno */
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  background: linear-gradient(135deg, #4c9aff, #6e5dc6);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Criar card */
+.create-card {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.create-card input,
+.create-card select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.create-card input:focus,
+.create-card select:focus {
+  border-color: #4c9aff;
+  box-shadow: 0 0 0 2px rgba(76, 154, 255, 0.2);
+}
+
+.create-card button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4c9aff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.create-card button:hover {
+  background-color: #2684ff;
+  transform: translateY(-1px);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 0;
+}

@@ -1,0 +1,31 @@
+<h1>{{ board?.name }}</h1>
+
+<div class="create-card">
+  <input
+    type="text"
+    placeholder="Escreva aqui"
+    [(ngModel)]="newCardTitle"
+  />
+
+  <select [(ngModel)]="selectedColumnId">
+    <option [ngValue]="undefined">Selecione a coluna</option>
+    <option
+      *ngFor="let column of board?.columns"
+      [ngValue]="column.id"
+    >
+      {{ column.name }}
+    </option>
+  </select>
+
+  <button type="button" (click)="createCard()">
+    Criar
+  </button>
+</div>
+
+<hr />
+
+<app-board
+  [board]="board"
+  [moveCard]="moveCard"
+  [deleteCard]="deleteCard"
+></app-board>

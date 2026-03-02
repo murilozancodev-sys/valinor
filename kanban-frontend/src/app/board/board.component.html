@@ -1,0 +1,43 @@
+<div class="kanban-board">
+  <div
+    class="kanban-column"
+    *ngFor="let column of board?.columns; let i = index"
+  >
+    <h2>{{ column.name }}</h2>
+
+    <div
+      class="kanban-card"
+      *ngFor="let card of column.cards"
+    >
+      <div class="card-title">
+        {{ card.title }}
+      </div>
+
+      <div class="actions">
+        <button
+          type="button"
+          *ngIf="i > 0"
+          (click)="moveCard(card.id, column.id, board.columns[i - 1].id)"
+        >
+          ⬅
+        </button>
+
+        <button
+          type="button"
+          *ngIf="i < board.columns.length - 1"
+          (click)="moveCard(card.id, column.id, board.columns[i + 1].id)"
+        >
+          ➡
+        </button>
+
+        <button
+          type="button"
+          (click)="deleteCard(card.id, column.id)"
+          style="color: red;"
+        >
+          ✖
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

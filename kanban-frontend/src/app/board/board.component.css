@@ -1,0 +1,74 @@
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.kanban-column {
+  background-color: var(--column-light);
+  padding: 12px;
+  width: 270px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .kanban-column {
+    background-color: var(--column-dark);
+  }
+}
+
+.kanban-column h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.kanban-card {
+  background-color: var(--card-light);
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .kanban-card {
+    background-color: var(--card-dark);
+  }
+}
+
+.kanban-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.actions button {
+  border: none;
+  background: #dfe1e6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.actions button:hover {
+  background-color: #c1c7d0;
+}
+
+.actions button:last-child {
+  background-color: #ffebe6;
+}
+
+.actions button:last-child:hover {
+  background-color: #ffbdad;
+}
